@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest --passWithNoTests",
     "lint": "eslint src/** --ext .js",
-    "prepare": "husky && husky install"
+    "prepare": "husky"
   },
   "author": "Jonas Andreasson",
   "license": "MIT",
@@ -35,7 +35,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/crusaider/node-red-contrib-leakbot"
+    "url": "git+https://github.com/crusaider/node-red-contrib-leakbot.git"
   },
   "node-red": {
     "version": ">=3.1.0",
