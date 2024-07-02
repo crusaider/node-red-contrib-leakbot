@@ -1,0 +1,7 @@
+node_modules
+coverage
+src/**/*.spec.js
+jest.config.js
+.gitignore
+.eslintrc.js
+.husky

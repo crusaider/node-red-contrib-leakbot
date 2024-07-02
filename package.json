@@ -1,0 +1,59 @@
+{
+  "name": "@crusaider/node-red-contrib-leakbot",
+  "version": "1.0.0",
+  "description": "A set of nodes allowing communication with the Leakbot API",
+  "scripts": {
+    "test": "jest --passWithNoTests",
+    "lint": "eslint src/** --ext .js",
+    "prepare-slask": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "author": "Jonas Andreasson",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.4",
+    "@types/node-red": "^1.3.1",
+    "@types/node-red-node-test-helper": "^0.3.0",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jest": "^27.2.3",
+    "eslint-plugin-n": "^16.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "fetch-mock-jest": "^1.5.1",
+    "husky": "^8.0.0",
+    "jest": "^29.6.4",
+    "lint-staged": "^14.0.1",
+    "node-red": "^3.0.2",
+    "node-red-node-test-helper": "^0.3.2",
+    "prettier": "^3.0.3"
+  },
+  "keywords": [
+    "node-red",
+    "leakbot",
+    "api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crusaider/node-red-contrib-leakbot"
+  },
+  "node-red": {
+    "version": ">=3.1.0",
+    "nodes": {
+      "leakbot-credentials": "./src/nodes/leakbot-credentials/leakbot-credentials.js",
+      "leakbot-list-devices": "./src/nodes/leakbot-list-devices/leakbot-list-devices.js",
+      "leakbot-device-status": "./src/nodes/leakbot-device-status/leakbot-device-status.js"
+    }
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  },
+  "dependencies": {
+    "@crusaider/leakbot-api": "^1.0.0"
+  }
+}

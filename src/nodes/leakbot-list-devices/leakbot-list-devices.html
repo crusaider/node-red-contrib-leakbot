@@ -1,0 +1,42 @@
+<script type="text/javascript">
+  RED.nodes.registerType('leakbot-list-devices', {
+    category: 'Leakbot',
+    color: '#E6E0F8',
+    icon: 'leakbot.svg',
+    paletteLabel: 'List Leakbot Devices',
+    label: function () {
+      return this.name || 'List Leakbot Devices';
+    },
+    defaults: {
+      name: { value: '' },
+      credsNode: { value: '', type: 'leakbot-credentials', required: true },
+    },
+    inputs: 1,
+    outputs: 1,
+  });
+</script>
+
+<script type="text/html" data-template-name="leakbot-list-devices">
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" />
+  </div>
+  <div class="form-row">
+    <label for="node-input-credsNode"
+      ><i class="fa fa-globe"></i> Credentials</label
+    >
+    <input type="text" id="node-input-credsNode" />
+  </div>
+</script>
+
+<script type="text/markdown" data-help-name="leakbot-list-devices">
+  Get the devices avialble to the user.
+
+  ### Inputs
+
+  The node disrespects any input. It will only serve as a trigger to get the status of the device.
+
+  ### Outputs
+
+  The node will output a array of objects containing information of the avilable devices.
+</script>

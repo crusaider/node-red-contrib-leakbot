@@ -1,0 +1,54 @@
+<script type="text/javascript">
+  RED.nodes.registerType('leakbot-device-status', {
+    category: 'Leakbot',
+    color: '#E6E0F8',
+    icon: 'leakbot.svg',
+    paletteLabel: 'Leakbot Device Status',
+    label: function () {
+      return this.name || 'Leakbot Device Status';
+    },
+    defaults: {
+      name: { value: '' },
+      credsNode: { value: '', type: 'leakbot-credentials', required: true },
+      deviceId: { validate: RED.validators.number(), required: true },
+    },
+    inputs: 1,
+    outputs: 1,
+  });
+</script>
+
+<script type="text/html" data-template-name="leakbot-device-status">
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" />
+  </div>
+  <div class="form-row">
+    <label for="node-input-credsNode"
+      ><i class="fa fa-globe"></i> Credentials</label
+    >
+    <input type="text" id="node-input-credsNode" />
+  </div>
+  <div class="form-row">
+    <label for="node-input-deviceId"
+      ><i class="fa fa-slideshare"></i> Device ID</label
+    >
+    <input type="text" id="node-input-deviceId" />
+  </div>
+</script>
+
+<script type="text/markdown" data-help-name="leakbot-device-status">
+  Get the status of a Leakbot device. Note that the device reports it's status to the cloud about once every 24 hours.
+
+  ### Inputs
+
+  The node disrespects any input. It will only serve as a trigger to get the status of the device.
+
+  ### Outputs
+
+  The node will output the status of the device of witch the id have been specified in the settings as a object.
+
+  ### Details
+
+  The id of the device needs to be provided. This can be found by using the List Leakbot Devices node. In the output of that node there will be a array of objects containing the devices. Each object will have a id property. This id should be used in the Device ID field of this node.
+
+</script>

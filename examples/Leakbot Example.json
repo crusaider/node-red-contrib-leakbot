@@ -1,0 +1,146 @@
+[
+  {
+    "id": "8aed526721b3d1ef",
+    "type": "tab",
+    "label": "Leakbot Example",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "feb959189fe2ba49",
+    "type": "inject",
+    "z": "8aed526721b3d1ef",
+    "name": "Trigger list API request",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 180,
+    "y": 120,
+    "wires": [
+      [
+        "708c4eb2c70e80be"
+      ]
+    ]
+  },
+  {
+    "id": "708c4eb2c70e80be",
+    "type": "leakbot-list-devices",
+    "z": "8aed526721b3d1ef",
+    "name": "",
+    "credsNode": "c9555e8e97199162",
+    "x": 460,
+    "y": 120,
+    "wires": [
+      [
+        "6d76d3e29e2562a7"
+      ]
+    ]
+  },
+  {
+    "id": "6d76d3e29e2562a7",
+    "type": "debug",
+    "z": "8aed526721b3d1ef",
+    "name": "Array of available devices",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 750,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "83c8e7bcb652ef2d",
+    "type": "leakbot-device-status",
+    "z": "8aed526721b3d1ef",
+    "name": "",
+    "credsNode": "c9555e8e97199162",
+    "deviceId": "467382",
+    "x": 460,
+    "y": 220,
+    "wires": [
+      [
+        "13d50c32ac28f143"
+      ]
+    ]
+  },
+  {
+    "id": "bd4f4773dd93fe12",
+    "type": "inject",
+    "z": "8aed526721b3d1ef",
+    "name": "Trigger status API request",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 190,
+    "y": 220,
+    "wires": [
+      [
+        "83c8e7bcb652ef2d"
+      ]
+    ]
+  },
+  {
+    "id": "13d50c32ac28f143",
+    "type": "debug",
+    "z": "8aed526721b3d1ef",
+    "name": "Status of specified device",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 750,
+    "y": 220,
+    "wires": []
+  },
+  {
+    "id": "565a1f7d6b09ded2",
+    "type": "comment",
+    "z": "8aed526721b3d1ef",
+    "name": "Leakbot example flow",
+    "info": "",
+    "x": 160,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "c9555e8e97199162",
+    "type": "leakbot-credentials",
+    "name": "Home"
+  }
+]
