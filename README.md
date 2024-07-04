@@ -2,7 +2,7 @@
 
 ## Leakbot Node Red Nodes
 
-![Alt text](example-flow.png 'Example flow')
+![Alt text](example-flow.png "Example flow")
 
 ## Description
 
@@ -38,6 +38,22 @@ The node will output the status of the device of witch the id have been specifie
 
 The id of the device needs to be provided. This can be found by using the List Leakbot Devices node. In the output of that node there will be a array of objects containing the devices. Each object will have a id property. This id should be used in the Device ID field of this node.
 
+### Leakbot Water Usage
+
+Get the water usage data of a Leakbot device.
+
+#### Inputs
+
+The node disrespects any input. It will only serve as a trigger to get the status of the device.
+
+#### Outputs
+
+The node will output the water usage stats of the device of witch the id have been specified in the settings as a object.
+
+#### Details
+
+The id of the device needs to be provided. This can be found by using the List Leakbot Devices node. In the output of that node there will be a array of objects containing the devices. Each object will have a id property. This id should be used in the Device ID field of this node.
+
 ### Leakbot Credentials
 
 Stores the credentials for the Leakbot API.
@@ -49,4 +65,3 @@ Leakbot Only Allows One Login: If you use theese nodes the token your mobile app
 ## Disclaimer
 
 This is not an official Leakbot product. This is a community project and is not affiliated with Leakbot. Use at your own risk.
-

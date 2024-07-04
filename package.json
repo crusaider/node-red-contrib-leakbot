@@ -1,6 +1,6 @@
 {
   "name": "@crusaider/node-red-contrib-leakbot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A set of nodes allowing communication with the Leakbot API",
   "scripts": {
     "test": "jest --passWithNoTests",
@@ -42,7 +42,8 @@
     "nodes": {
       "leakbot-credentials": "./src/nodes/leakbot-credentials/leakbot-credentials.js",
       "leakbot-list-devices": "./src/nodes/leakbot-list-devices/leakbot-list-devices.js",
-      "leakbot-device-status": "./src/nodes/leakbot-device-status/leakbot-device-status.js"
+      "leakbot-device-status": "./src/nodes/leakbot-device-status/leakbot-device-status.js",
+      "leakbot-water-usage": "./src/nodes/leakbot-water-usage/leakbot-water-usage.js"
     }
   },
   "engines": {

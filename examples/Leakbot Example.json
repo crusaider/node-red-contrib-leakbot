@@ -75,7 +75,7 @@
     "credsNode": "c9555e8e97199162",
     "deviceId": "467382",
     "x": 460,
-    "y": 220,
+    "y": 200,
     "wires": [
       [
         "13d50c32ac28f143"
@@ -104,7 +104,7 @@
     "payload": "",
     "payloadType": "date",
     "x": 190,
-    "y": 220,
+    "y": 200,
     "wires": [
       [
         "83c8e7bcb652ef2d"
@@ -125,7 +125,7 @@
     "statusVal": "",
     "statusType": "auto",
     "x": 750,
-    "y": 220,
+    "y": 200,
     "wires": []
   },
   {
@@ -136,6 +136,67 @@
     "info": "",
     "x": 160,
     "y": 40,
+    "wires": []
+  },
+  {
+    "id": "215b169484fea6fe",
+    "type": "leakbot-water-usage",
+    "z": "8aed526721b3d1ef",
+    "name": "",
+    "credsNode": "c9555e8e97199162",
+    "deviceId": "467382",
+    "x": 460,
+    "y": 280,
+    "wires": [
+      [
+        "f51a9c872bdc7f40"
+      ]
+    ]
+  },
+  {
+    "id": "9a91d6c6bf9c71e5",
+    "type": "inject",
+    "z": "8aed526721b3d1ef",
+    "name": "Trigger status API request",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 190,
+    "y": 280,
+    "wires": [
+      [
+        "215b169484fea6fe"
+      ]
+    ]
+  },
+  {
+    "id": "f51a9c872bdc7f40",
+    "type": "debug",
+    "z": "8aed526721b3d1ef",
+    "name": "Water usage data",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 730,
+    "y": 280,
     "wires": []
   },
   {
